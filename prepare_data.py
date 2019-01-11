@@ -12,6 +12,7 @@ def natural_keys(text):
     return [atoi(c) for c in re.split('(\d+)', text)]
 
 
+
 def load_images_from_folder(folder):
     images = []
     for filename in os.listdir(folder):
@@ -54,7 +55,9 @@ def data(list_of_images, img_width, img_height):
         # else:
         # print('neither cat nor dog name present in images')
 
+
     print("cnt_exp = " + str(cnt_exp))
+
     return x, y
 
 
@@ -66,6 +69,7 @@ def prepare_data():
     train_images_dogs_cats = [train_dir + i for i in os.listdir(train_dir)]  # use this for full dataset
     test_images_dogs_cats = [test_dir + i for i in os.listdir(test_dir)]
 
+
     train_images_dogs_cats = update(train_images_dogs_cats)
     test_images_dogs_cats = update(test_images_dogs_cats)
 
@@ -74,6 +78,7 @@ def prepare_data():
     test_images_dogs_cats.sort(key=natural_keys)
 
     x, y = data(train_images_dogs_cats, img_width, img_height)
+
 
     print("x = " + str(len(x)))
     print("y = " + str(len(y)))
