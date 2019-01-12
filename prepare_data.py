@@ -12,6 +12,7 @@ def natural_keys(text):
     return [atoi(c) for c in re.split('(\d+)', text)]
 
 
+
 def prepare_data(list_of_images_path, img_width, img_height):
     x = []  # images as arrays
     y = []  # labels
@@ -34,7 +35,6 @@ def split_data():
     test_dir = '/Users/tanmesh/dev/cat_and_dog/dataset/test/'
     train_images_dogs_cats = [train_dir + i for i in os.listdir(train_dir)]  # use this for full dataset
     test_images_dogs_cats = [test_dir + i for i in os.listdir(test_dir)]
-
     train_images_dogs_cats.sort(key=natural_keys)
     train_images_dogs_cats = train_images_dogs_cats[0:1300] + train_images_dogs_cats[12500:13800]
     test_images_dogs_cats.sort(key=natural_keys)
