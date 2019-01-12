@@ -12,7 +12,6 @@ def natural_keys(text):
     return [atoi(c) for c in re.split('(\d+)', text)]
 
 
-
 def prepare_data(list_of_images_path, img_width, img_height):
     x = []  # images as arrays
     y = []  # labels

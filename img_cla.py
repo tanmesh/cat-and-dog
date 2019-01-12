@@ -1,5 +1,5 @@
 import numpy as np
-from keras.layers import Activation, Dropout
+from keras.layers import Activation
 from keras.layers import Conv2D
 from keras.layers import Dense
 from keras.layers import Flatten
