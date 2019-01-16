@@ -1,5 +1,5 @@
 import numpy as np
-from keras.layers import Activation, Dropout
+from keras.layers import Activation
 from keras.layers import Conv2D
 from keras.layers import Dense
 from keras.layers import Flatten
@@ -69,7 +69,9 @@ def img_classi():
     validation_generator = val_data_gen.flow(np.array(x_val), y_val, batch_size=batch_size)
 
     print('Fitting the model...')
-    model.fit_generator(train_generator, steps_per_epoch=n_train // batch_size, epochs=30,
+    # model.fit_generator(train_generator, steps_per_epoch=n_train // batch_size, epochs=30,
+    #                     validation_data=validation_generator, validation_steps=n_val // batch_size)
+    model.fit_generator(train_generator, steps_per_epoch=n_train // batch_size, epochs=1,
                         validation_data=validation_generator, validation_steps=n_val // batch_size)
 
     print('Saving the model...')
