@@ -1,6 +1,5 @@
 import os
 import re
-
 import cv2
 
 
@@ -35,7 +34,7 @@ def split_data():
     train_images_dogs_cats = [train_dir + i for i in os.listdir(train_dir)]  # use this for full dataset
     test_images_dogs_cats = [test_dir + i for i in os.listdir(test_dir)]
     train_images_dogs_cats.sort(key=natural_keys)
-    train_images_dogs_cats = train_images_dogs_cats[0:1300] + train_images_dogs_cats[12500:13800]
+    # train_images_dogs_cats = train_images_dogs_cats[0:1300] + train_images_dogs_cats[12500:13800]
     test_images_dogs_cats.sort(key=natural_keys)
 
     return train_images_dogs_cats, test_images_dogs_cats
